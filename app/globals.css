@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "AbrilFatface-Regular";
+    src: url("/AbrilFatface-Regular.ttf");
+}
+
+@font-face {
+    font-family: "REM-VariableFont_wght";
+    src: url("/REM-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Lora-VariableFont_wght";
+    src: url("/Lora-VariableFont_wght.ttf");
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d3d3d3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #525151;
+}
+
+.regular{
+    font-style: normal;
+}
