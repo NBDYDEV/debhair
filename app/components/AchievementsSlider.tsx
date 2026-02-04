@@ -9,12 +9,8 @@ type Props = {
 
 export default function AchievementsSlider({ children }: Props) {
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
-
-    const totalSlides = React.Children.count(children);
-
     const checkScroll = useCallback(() => {
         if (!scrollRef.current) return;
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
