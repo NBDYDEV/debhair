@@ -46,8 +46,8 @@ async function Achivements() {
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-rem font-extrabold text-primarydark leading-tight">
                         Hajbeültetés{" "}
                         <span className="relative inline-block">
-                            <span className="relative z-10 font-bold">Eredényeink</span>
-                            <span className="absolute bottom-[0.06125rem] -md:bottom-1 left-0 w-full h-2 md:h-3 bg-secondary/70 -z-0 rounded-sm"></span>
+                            <span className="relative z-10 font-bold">Eredményeink</span>
+                            <span className="absolute bottom-[0.06125rem] md:bottom-1 left-0 w-full h-2 md:h-3 bg-secondary/70 -z-0 rounded-sm"></span>
                         </span>{" "}
                     </h2>
                 </div>

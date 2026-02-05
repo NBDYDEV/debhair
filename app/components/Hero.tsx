@@ -8,11 +8,9 @@ import { resolveHomeImageUrl } from "../lib/url";
 async function Hero() {
     const heroData = await getHomeData();
 
-    // Fallback értékek ha az API nem elérhető
     const title = heroData?.hero_title || "Professzionális Hajbeültetés Debrecenben";
     const description = heroData?.hero_text || "Természetes eredmény, prémium minőség, több mint 5000 elégedett ügyfél.";
 
-    // Biztonságos image URL kezelés
     const imageUrl = heroData?.hero_image?.url
         ? resolveHomeImageUrl(heroData.hero_image.url)
         : "/placeholder-hero.jpg";
@@ -34,7 +32,7 @@ async function Hero() {
                         <span className="font-lora font-normal">magabiztosságot!</span>
                     </h1>
 
-                    <p className="text-gray-600 text-lg md:text-xl lg:text-2xl max-w-lg font-sans text-center md:text-left mx-auto md:mx-0">
+                    <p className="text-gray-600 text-lg md:text-xl lg:text-2xl max-w-lg font-rem text-center md:text-left mx-auto md:mx-0">
                         {description}
                     </p>
 
@@ -42,7 +40,7 @@ async function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 mt-2 md:mt-4 justify-center md:justify-start">
                         <Link
                             href="/kapcsolat"
-                            className="flex items-center justify-center gap-3 bg-primary hover:bg-primarydark text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-sans text-sm md:text-base tracking-widest uppercase shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                            className="flex items-center justify-center gap-3 bg-primary hover:bg-primarydark text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-rem text-sm md:text-base tracking-widest uppercase shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                         >
                             <Calendar className="h-5 w-5 md:h-6 md:w-6" />
                             <span>Időpont foglalás</span>
@@ -50,7 +48,7 @@ async function Hero() {
 
                         <Link
                             href="/hogy-mukodik"
-                            className="flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-primarydark px-6 md:px-8 py-3 md:py-4 rounded-full font-sans text-sm md:text-base tracking-widest uppercase shadow-lg border border-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                            className="flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-primarydark px-6 md:px-8 py-3 md:py-4 rounded-full font-rem text-sm md:text-base tracking-widest uppercase shadow-lg border border-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-xl"
                         >
                             <Search className="h-5 w-5 md:h-6 md:w-6" />
                             <span>Hogy működik?</span>
@@ -67,13 +65,13 @@ async function Hero() {
                                             src={imageUrl}
                                             alt="Debhair hajbeültetési klinika Debrecen - modern berendezés és professzionális környezet"
                                             fill
-                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 550px"
                                             className="object-cover"
                                             priority
                                         />
                                     ) : (
                                         <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                                            <span className="text-xl font-sans text-gray-500">Betöltés...</span>
+                                            <span className="text-xl font-rem text-gray-500">Betöltés...</span>
                                         </div>
                                     )}
                                 </div>
