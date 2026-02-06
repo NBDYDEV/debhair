@@ -178,42 +178,43 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
     }
 
     return (
-        <section className="w-full py-12 sm:py-16 lg:py-24" aria-labelledby="contact-form-title">
+        <section className={`w-full py-12 sm:py-16 lg:py-24 overflow-hidden ${backgroundMap[backgroundVariant]}`} aria-labelledby="contact-form-title">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
 
-                    {/* BALOLDAL - FORM */}
+                    {/* FORM SECTION */}
                     <div
-                        className={`w-full lg:w-1/2 rounded-3xl shadow-2xl p-5 sm:p-8 lg:p-10 flex flex-col ${backgroundMap[backgroundVariant]}`}
-                        style={{ minHeight: '650px' }}
+                        className={`w-full lg:w-1/2 rounded-2xl lg:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 xl:p-10 flex flex-col bg-white min-h-[600px] lg:min-h-[650px]`}
                     >
                         {/* HEADER */}
-                        <div className="text-center mb-8">
-                            <h2 id="contact-form-title" className="text-3xl md:text-4xl font-extrabold text-primarydark">
+                        <div className="text-center mb-6 lg:mb-8">
+                            <h2 id="contact-form-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primarydark">
                                 <span className="text-secondary">Ingyenes</span> árajánlat kérése
                             </h2>
-                            <p className="mt-2 text-gray-600 text-base">
+                            <p className="mt-2 text-gray-600 text-sm sm:text-base">
                                 Mindössze 3 egyszerű lépésben
                             </p>
                         </div>
 
-                        {/* STEP INDICATOR */}
-                        <div className="flex justify-center items-center mb-8">
+                        {/* STEP INDICATOR - MOBILE OPTIMIZED */}
+                        <div className="flex justify-center items-center mb-6 lg:mb-8 px-2">
                             {steps.map((s, i) => (
                                 <React.Fragment key={s.id}>
-                                    <div className="flex flex-col items-center gap-2">
+                                    <div className="flex flex-col items-center gap-1 sm:gap-2">
                                         <div
-                                            className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 font-bold ${step >= s.id ? "bg-primarydark text-white shadow-lg scale-110" : "border-2 border-gray-300 text-gray-400"
+                                            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-300 font-bold text-sm sm:text-base ${step >= s.id
+                                                    ? "bg-primarydark text-white shadow-lg scale-105 sm:scale-110"
+                                                    : "border-2 border-gray-300 text-gray-400"
                                                 }`}
                                         >
-                                            {step > s.id ? <Check className="w-6 h-6" /> : <span>{s.id}</span>}
+                                            {step > s.id ? <Check className="w-5 h-5 sm:w-6 sm:h-6" /> : <span>{s.id}</span>}
                                         </div>
-                                        <span className={`text-[10px] uppercase font-bold ${step >= s.id ? "text-primarydark" : "text-gray-400"}`}>
+                                        <span className={`text-[9px] sm:text-[10px] uppercase font-bold whitespace-nowrap ${step >= s.id ? "text-primarydark" : "text-gray-400"}`}>
                                             {s.title}
                                         </span>
                                     </div>
                                     {i < steps.length - 1 && (
-                                        <div className={`w-16 md:w-24 h-[2px] mx-2 mb-6 rounded transition-all duration-500 ${step > s.id ? "bg-primarydark" : "bg-gray-300"
+                                        <div className={`w-8 sm:w-12 md:w-16 lg:w-20 h-[2px] mx-1 sm:mx-2 mb-5 sm:mb-6 rounded transition-all duration-500 ${step > s.id ? "bg-primarydark" : "bg-gray-300"
                                             }`} />
                                     )}
                                 </React.Fragment>
@@ -222,7 +223,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
 
                         {/* STEP CONTENT */}
                         <div className="flex-1">
-                            <h3 className="text-xl font-bold text-primarydark text-center mb-6">
+                            <h3 className="text-lg sm:text-xl font-bold text-primarydark text-center mb-4 sm:mb-6 px-2">
                                 {steps[step - 1].description}
                             </h3>
 
@@ -236,7 +237,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                 >
                                     {/* STEP 1 */}
                                     {step === 1 && (
-                                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4">
+                                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                                             {hairlossOptions.map((option) => (
                                                 <button
                                                     key={option.value}
@@ -245,12 +246,12 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                                         setHairloss(option.value)
                                                         setErrors({ ...errors, hairloss: "" })
                                                     }}
-                                                    className={`aspect-square rounded-2xl flex flex-col items-center justify-center gap-2 md:gap-3 cursor-pointer border-2 transition-all ${hairloss === option.value
-                                                        ? "border-primarydark bg-teal-50/70 scale-105 shadow-lg"
-                                                        : "border-gray-200 bg-gray-50 hover:bg-gray-100"
+                                                    className={`aspect-square rounded-xl sm:rounded-2xl flex flex-col items-center justify-center gap-2 md:gap-3 cursor-pointer border-2 transition-all ${hairloss === option.value
+                                                            ? "border-primarydark bg-teal-50/70 scale-105 shadow-lg"
+                                                            : "border-gray-200 bg-gray-50 hover:bg-gray-100"
                                                         }`}
                                                 >
-                                                    <div className="relative w-12 h-12 md:w-16 md:h-16">
+                                                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
                                                         <Image
                                                             src={`/${option.icon}`}
                                                             alt={option.label}
@@ -263,7 +264,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                             ))}
                                             {errors.hairloss && (
                                                 <div className="col-span-2 sm:col-span-4 flex items-center gap-2 text-red-600 text-sm mt-2">
-                                                    <AlertCircle className="w-4 h-4" />
+                                                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                                     <span>{errors.hairloss}</span>
                                                 </div>
                                             )}
@@ -295,7 +296,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                                 </div>
                                                 {errors.age && (
                                                     <div className="flex items-center gap-2 text-red-600 text-sm mt-2">
-                                                        <AlertCircle className="w-4 h-4" />
+                                                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                                         <span>{errors.age}</span>
                                                     </div>
                                                 )}
@@ -323,7 +324,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                                 </div>
                                                 {errors.hairlossSince && (
                                                     <div className="flex items-center gap-2 text-red-600 text-sm mt-2">
-                                                        <AlertCircle className="w-4 h-4" />
+                                                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                                         <span>{errors.hairlossSince}</span>
                                                     </div>
                                                 )}
@@ -351,48 +352,64 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                                 />
                                                 {errors.fullName && (
                                                     <div className="flex items-center gap-2 text-red-600 text-sm mt-2">
-                                                        <AlertCircle className="w-4 h-4" />
+                                                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                                         <span>{errors.fullName}</span>
                                                     </div>
                                                 )}
                                             </div>
 
                                             <div>
-                                                <label htmlFor="phone" className="text-sm font-bold text-gray-700 block mb-2">
+                                                <label htmlFor="country-select" className="text-sm font-bold text-gray-700 block mb-2">
+                                                    Ország <span className="text-red-500">*</span>
+                                                </label>
+                                                <div className="grid grid-cols-3 gap-2">
+                                                    {(Object.keys(phoneConfig) as CountryCode[]).map((code) => (
+                                                        <button
+                                                            key={code}
+                                                            type="button"
+                                                            onClick={() => {
+                                                                setCountry(code)
+                                                                setPhone("")
+                                                            }}
+                                                            className={`p-3 rounded-xl border-2 transition-all flex items-center justify-center gap-2 ${country === code
+                                                                    ? "border-primarydark bg-teal-50/70 shadow-md"
+                                                                    : "border-gray-200 hover:border-gray-300"
+                                                                }`}
+                                                        >
+                                                            <span className="text-2xl">{phoneConfig[code].flag}</span>
+                                                            <span className="text-xs font-bold">{code}</span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label htmlFor="phone-input" className="text-sm font-bold text-gray-700 block mb-2">
                                                     Telefonszám <span className="text-red-500">*</span>
                                                 </label>
-                                                <div className={`flex items-center rounded-xl border ${errors.phone ? 'border-red-500' : 'border-gray-200'} overflow-hidden focus-within:border-primarydark focus-within:ring-2 focus-within:ring-primary/20`}>
-                                                    <select
-                                                        value={country}
-                                                        onChange={(e) => {
-                                                            setCountry(e.target.value as CountryCode)
-                                                            setPhone("")
-                                                            setErrors({ ...errors, phone: "" })
-                                                        }}
-                                                        className="bg-gray-50 px-3 py-3 border-r outline-none cursor-pointer"
-                                                    >
-                                                        {Object.entries(phoneConfig).map(([code, c]) => (
-                                                            <option key={code} value={code}>{c.flag} {c.prefix}</option>
-                                                        ))}
-                                                    </select>
+                                                <div className="flex gap-2">
+                                                    <div className="flex items-center justify-center px-4 py-3 bg-gray-100 rounded-xl border border-gray-200 text-gray-700 font-medium text-sm whitespace-nowrap">
+                                                        {phoneConfig[country].prefix}
+                                                    </div>
                                                     <input
-                                                        id="phone"
+                                                        id="phone-input"
                                                         type="tel"
                                                         value={phone}
                                                         onChange={(e) => {
-                                                            const cleaned = e.target.value.replace(/\D/g, "")
-                                                            if (cleaned.length <= phoneConfig[country].max) {
-                                                                setPhone(cleaned)
+                                                            const value = e.target.value.replace(/\D/g, "")
+                                                            if (value.length <= phoneConfig[country].max) {
+                                                                setPhone(value)
                                                                 setErrors({ ...errors, phone: "" })
                                                             }
                                                         }}
-                                                        className="flex-1 px-4 py-3 outline-none"
+                                                        className={`flex-1 rounded-xl border ${errors.phone ? 'border-red-500' : 'border-gray-200'} px-4 py-3 focus:border-primarydark focus:ring-2 focus:ring-primary/20 outline-none`}
                                                         placeholder={phoneConfig[country].placeholder}
+                                                        maxLength={phoneConfig[country].max}
                                                     />
                                                 </div>
                                                 {errors.phone && (
                                                     <div className="flex items-center gap-2 text-red-600 text-sm mt-2">
-                                                        <AlertCircle className="w-4 h-4" />
+                                                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                                         <span>{errors.phone}</span>
                                                     </div>
                                                 )}
@@ -424,7 +441,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                                 </label>
                                                 {errors.gdpr && (
                                                     <div className="flex items-center gap-2 text-red-600 text-sm mt-2">
-                                                        <AlertCircle className="w-4 h-4" />
+                                                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                                         <span>{errors.gdpr}</span>
                                                     </div>
                                                 )}
@@ -436,13 +453,13 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                         </div>
 
                         {/* BUTTONS */}
-                        <div className={`mt-8 pt-6 border-t border-gray-200 flex ${step > 1 ? "justify-between" : "justify-center"} items-center gap-4`}>
+                        <div className={`mt-6 lg:mt-8 pt-6 border-t border-gray-200 flex ${step > 1 ? "justify-between" : "justify-center"} items-center gap-3 sm:gap-4`}>
                             {step > 1 && (
                                 <button
                                     type="button"
                                     onClick={prevStep}
                                     disabled={isSubmitting}
-                                    className="text-gray-600 hover:text-primarydark font-bold py-3 px-6 rounded-full transition-colors disabled:opacity-50"
+                                    className="text-gray-600 hover:text-primarydark font-bold py-3 px-4 sm:px-6 rounded-full transition-colors disabled:opacity-50 text-sm sm:text-base"
                                 >
                                     ← Vissza
                                 </button>
@@ -451,7 +468,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                 type="button"
                                 onClick={nextStep}
                                 disabled={isSubmitting}
-                                className="group bg-primarydark hover:bg-primary text-white rounded-full py-4 px-8 font-bold flex items-center gap-3 transition-all shadow-lg hover:shadow-xl active:scale-95 ml-auto disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="group bg-primarydark hover:bg-primary text-white rounded-full py-3 sm:py-4 px-6 sm:px-8 font-bold flex items-center gap-2 sm:gap-3 transition-all shadow-lg hover:shadow-xl active:scale-95 ml-auto disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
                             >
                                 {isSubmitting ? (
                                     <>
@@ -468,9 +485,10 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                         </div>
                     </div>
 
+                    {/* MAP SECTION */}
                     <div className="w-full lg:w-1/2">
                         <motion.div
-                            className="w-full rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-card aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[500px]"
+                            className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-primarydark aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[500px]"
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
