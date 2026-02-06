@@ -18,7 +18,7 @@ export default async function Home() {
                 <Reviews />
                 <HowItWorks />
                 <Team />
-                <ContactForm backgroundVariant='gradient' />
+                {/* <ContactForm backgroundVariant='gradient' /> */}
             </div>
         </>
     );

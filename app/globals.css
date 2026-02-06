@@ -18,6 +18,10 @@
     src: url("/Lora-VariableFont_wght.ttf");
 }
 
+:root{
+    overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }

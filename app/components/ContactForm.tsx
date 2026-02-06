@@ -178,13 +178,13 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
     }
 
     return (
-        <section className="w-full py-16" aria-labelledby="contact-form-title">
-            <div className="container mx-auto px-4 md:px-12">
+        <section className="w-full py-12 sm:py-16 lg:py-24" aria-labelledby="contact-form-title">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
 
                     {/* BALOLDAL - FORM */}
                     <div
-                        className={`w-full lg:w-1/2 rounded-3xl shadow-2xl p-6 md:p-10 flex flex-col ${backgroundMap[backgroundVariant]}`}
+                        className={`w-full lg:w-1/2 rounded-3xl shadow-2xl p-5 sm:p-8 lg:p-10 flex flex-col ${backgroundMap[backgroundVariant]}`}
                         style={{ minHeight: '650px' }}
                     >
                         {/* HEADER */}
@@ -470,17 +470,17 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
 
                     <div className="w-full lg:w-1/2">
                         <motion.div
-                            className="w-full lg:w-1/2 flex-1 rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white min-h-[400px]"
-                            initial={{ opacity: 0, x: 100 }}
+                            className="w-full rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-card aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[500px]"
+                            initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            style={{ width: "100%", height: "100%" }}
                         >
                             <iframe
                                 className="w-full h-full block"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
+                                title="Deb Hair klinika térkép"
                                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDt5f--St5Z0UpDT4iFJ0hrg0QeQc0IB4&q=Deb+Hair+hajbeültetési+klinika+Debrecen"
                             />
                         </motion.div>

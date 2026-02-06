@@ -1,66 +1,92 @@
-'use client';
+'use client'
 
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useRef, useState, useEffect, useCallback } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 type Props = {
-    children: React.ReactNode[];
-};
+    children: React.ReactNode[]
+}
 
 export default function AchievementsSlider({ children }: Props) {
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(true);
+    const scrollRef = useRef<HTMLDivElement>(null)
+    const [canScrollLeft, setCanScrollLeft] = useState(false)
+    const [canScrollRight, setCanScrollRight] = useState(true)
+
     const checkScroll = useCallback(() => {
-        if (!scrollRef.current) return;
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        setCanScrollLeft(scrollLeft > 10);
-        setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-        const index = Math.round(scrollLeft / clientWidth);
-    }, []);
+        if (!scrollRef.current) return
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
+        setCanScrollLeft(scrollLeft > 10)
+        setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+    }, [])
 
     useEffect(() => {
-        const ref = scrollRef.current;
-        if (ref) {
-            ref.addEventListener('scroll', checkScroll);
-            checkScroll();
-            window.addEventListener('resize', checkScroll);
-        }
+        const ref = scrollRef.current
+        if (!ref) return
+
+        ref.addEventListener('scroll', checkScroll)
+        window.addEventListener('resize', checkScroll)
+        checkScroll()
+
         return () => {
-            if (ref) ref.removeEventListener('scroll', checkScroll);
-            window.removeEventListener('resize', checkScroll);
-        };
-    }, [checkScroll]);
+            ref.removeEventListener('scroll', checkScroll)
+            window.removeEventListener('resize', checkScroll)
+        }
+    }, [checkScroll])
 
     const scroll = (direction: 'left' | 'right') => {
-        if (!scrollRef.current) return;
-        const container = scrollRef.current;
-        const scrollAmount = container.clientWidth;
-
-        container.scrollBy({
-            left: direction === 'left' ? -scrollAmount : scrollAmount,
-            behavior: 'smooth'
-        });
-    };
+        if (!scrollRef.current) return
+        scrollRef.current.scrollBy({
+            left:
+                direction === 'left'
+                    ? -scrollRef.current.clientWidth
+                    : scrollRef.current.clientWidth,
+            behavior: 'smooth',
+        })
+    }
 
     return (
         <div className="relative group">
             <div
                 ref={scrollRef}
-                className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-4 px-1"
+                className="
+                    flex gap-6
+                    overflow-x-auto
+                    snap-x snap-mandatory
+                    scrollbar-hide
+                    py-4
+                    px-1
+                "
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {React.Children.map(children, (child, index) => (
-                    <div className="min-w-full md:min-w-[calc(50%-12px)] snap-center shrink-0">
+                {React.Children.map(children, (child) => (
+                    <div
+                        className="
+                            snap-center
+                            shrink-0
+                            min-w-full
+                            md:min-w-[80%]
+                            lg:min-w-[calc(33.333%-16px)]
+                        "
+                    >
                         {child}
                     </div>
                 ))}
             </div>
 
+            {/* NYILAK – CSAK DESKTOP */}
             <button
                 onClick={() => scroll('left')}
                 disabled={!canScrollLeft}
-                className={`absolute top-1/2 -left-4 md:-left-6 -translate-y-1/2 z-10 p-3 rounded-full bg-primary text-white transition-all duration-300 hover:scale-110 disabled:opacity-0 disabled:scale-90 ${!canScrollLeft ? 'pointer-events-none' : ''}`}
+                className="
+                    hidden lg:flex
+                    absolute top-1/2 -left-6 -translate-y-1/2
+                    z-10
+                    p-3 rounded-full
+                    bg-primary text-white
+                    transition
+                    hover:scale-110
+                    disabled:opacity-0
+                "
                 aria-label="Previous slide"
             >
                 <ChevronLeft size={24} />
@@ -69,11 +95,20 @@ export default function AchievementsSlider({ children }: Props) {
             <button
                 onClick={() => scroll('right')}
                 disabled={!canScrollRight}
-                className={`absolute top-1/2 -right-4 md:-right-6 -translate-y-1/2 z-10 p-3 rounded-full bg-primary text-white transition-all duration-300 hover:scale-110 disabled:opacity-0 disabled:scale-90 ${!canScrollRight ? 'pointer-events-none' : ''}`}
+                className="
+                    hidden lg:flex
+                    absolute top-1/2 -right-6 -translate-y-1/2
+                    z-10
+                    p-3 rounded-full
+                    bg-primary text-white
+                    transition
+                    hover:scale-110
+                    disabled:opacity-0
+                "
                 aria-label="Next slide"
             >
                 <ChevronRight size={24} />
             </button>
         </div>
-    );
+    )
 }

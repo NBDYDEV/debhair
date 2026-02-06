@@ -4,6 +4,7 @@ import ReviewsClient from './ReviewsClient'
 
 export default async function Reviews() {
     const reviews = await getReviewsData()
+
     const newData = reviews?.map((step) => {
         return {
             ...step,
@@ -14,13 +15,13 @@ export default async function Reviews() {
                 height: step.avatar.height,
                 url: resolveReviewsImageUrl(step.avatar.url) ?? '',
                 formats: step.avatar.formats,
-            }
+            },
         }
     })
 
     return (
-        <section className="bg-gradient-to-t from-background via-primary/30 to-background py-16 md:py-24 overflow-hidden">
-            <div className="container mx-auto px-6 md:px-12">
+        <section className="bg-gradient-to-t from-background via-primary/30 to-background py-16 md:py-20 lg:py-24 overflow-hidden">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ReviewsClient reviews={newData || []} />
             </div>
         </section>
