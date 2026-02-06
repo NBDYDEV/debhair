@@ -87,6 +87,7 @@ export default function BeforeAfter({ before, after }: Props) {
                     fill
                     className="object-cover"
                     draggable={false}
+                    loading='lazy'
                 />
             </div>
 

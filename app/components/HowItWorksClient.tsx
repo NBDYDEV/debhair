@@ -41,6 +41,7 @@ function HowItWorksClient({ steps }: { steps: HowItWorksData[] }) {
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 45vw"
                                     className="object-cover"
+                                    loading='lazy'
                                 />
                             </motion.div>
                         </AnimatePresence>

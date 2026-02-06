@@ -25,6 +25,7 @@ function TeamMemberCard({
                     fill
                     sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 280px"
                     className="object-cover object-top"
+                    loading='lazy'
                 />
             </div>
 

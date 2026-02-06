@@ -69,6 +69,7 @@ async function AchivementsHero() {
                                     fill
                                     priority
                                     className="object-cover"
+                                    loading='lazy'
                                 />
                             </div>
 
@@ -79,6 +80,7 @@ async function AchivementsHero() {
                                     fill
                                     priority
                                     className="object-cover"
+                                    loading='lazy'
                                 />
                             </div>
 
@@ -89,6 +91,7 @@ async function AchivementsHero() {
                                     fill
                                     priority
                                     className="object-cover"
+                                    loading='lazy'
                                 />
                             </div>
 
@@ -99,6 +102,7 @@ async function AchivementsHero() {
                                     fill
                                     priority
                                     className="object-cover"
+                                    loading='lazy'
                                 />
                             </div>
 
@@ -109,6 +113,7 @@ async function AchivementsHero() {
                                     fill
                                     priority
                                     className="object-cover"
+                                    loading='lazy'
                                 />
                             </div>
 
