@@ -17,7 +17,7 @@ function page() {
             <AchivementsHero />
             <Achivements />
             <Reviews />
-            {/* <ContactForm backgroundVariant="light"/> */}
+            <ContactForm backgroundVariant="light"/>
 
         </>
     )

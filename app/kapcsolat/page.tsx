@@ -14,7 +14,7 @@ function ConnectionPage() {
         <>
             <section className="relative w-full min-h-[calc(100vh-74px)] bg-linear-to-t from-primary/40 to-background py-12 md:py-16 overflow-hidden">
                 <div className="container mx-auto md:px-12 h-full">
-                    {/* <ContactForm backgroundVariant='light' /> */}
+                    <ContactForm backgroundVariant='light' />
                 </div>
             </section >
             <section className="relative w-full bg-white py-12 md:py-16 overflow-hidden">

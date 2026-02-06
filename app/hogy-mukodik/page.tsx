@@ -24,7 +24,7 @@ function page() {
             <Achivements />
             <Faq />
             <After />
-            {/* <ContactForm backgroundVariant="gradient"/> */}
+            <ContactForm backgroundVariant="gradient"/>
         </>
     )
 }
