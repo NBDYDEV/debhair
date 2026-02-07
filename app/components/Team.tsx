@@ -6,7 +6,6 @@ import { resolveTeamImageUrl } from '../lib/url';
 import Link from 'next/link';
 import { AtSign } from 'lucide-react';
 
-// Team member card component
 function TeamMemberCard({
     name,
     position,
@@ -29,7 +28,6 @@ function TeamMemberCard({
                 />
             </div>
 
-            {/* Info section */}
             <div className="w-full py-4 md:py-5 lg:py-6 text-center bg-[#0F4D43]">
                 <h3 className="text-white text-base md:text-lg font-bold leading-tight px-2">
                     {name}
@@ -45,7 +43,6 @@ function TeamMemberCard({
 async function Team() {
     const team = await getTeamData();
 
-    // Placeholder data if no API response
     const placeholderTeam = [
         { id: 1, name: "Dr. Kovács János", position: "Vezető orvos", image: null },
         { id: 2, name: "Dr. Nagy Eszter", position: "Hajbeültetési specialista", image: null },
@@ -57,9 +54,7 @@ async function Team() {
 
     return (
         <section className="py-16 md:py-20 lg:py-24 bg-primarydark">
-            {/* GLOBAL CONTAINER */}
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* HEADER */}
                 <div className="flex flex-col gap-4 lg:gap-6 text-center lg:text-left">
                     <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider justify-center lg:justify-start">
                         <span className="w-2 h-2 rounded-full bg-white/50"></span>
@@ -96,7 +91,6 @@ async function Team() {
                     </div>
                 </div>
 
-                {/* SLIDER */}
                 <div className="w-full py-4 md:py-6 mt-8 md:mt-10">
                     <OurTeamSlider>
                         {teamData.map((member) => (

@@ -67,7 +67,6 @@ export default function BeforeAfter({ before, after }: Props) {
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
         >
-            {/* AFTER IMAGE (base layer) */}
             <div className="absolute inset-0 w-full h-full bg-gray-200">
                 <Image
                     src={after}
@@ -80,7 +79,6 @@ export default function BeforeAfter({ before, after }: Props) {
                 />
             </div>
 
-            {/* BEFORE IMAGE (clipped layer) */}
             <div
                 className="absolute inset-0 w-full h-full bg-gray-300"
                 style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -96,7 +94,6 @@ export default function BeforeAfter({ before, after }: Props) {
                 />
             </div>
 
-            {/* SLIDER HANDLE */}
             <div
                 className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 pointer-events-none"
                 style={{ left: `${position}%` }}

@@ -28,9 +28,8 @@ const ReviewsSlider = forwardRef<ReviewsSliderRef, ReviewsSliderProps>(({ review
         setCanLeft(scrollLeft > 10)
         setCanRight(scrollLeft < scrollWidth - clientWidth - 10)
 
-        // Calculate active card index based on scroll position
         const cardWidth = ref.current.querySelector('.review-card')?.clientWidth || 0
-        const gap = 32 // 8 * 4 = 32px gap
+        const gap = 32
         const newIndex = Math.round(scrollLeft / (cardWidth + gap))
         setActiveIndex(newIndex)
     }
@@ -67,7 +66,6 @@ const ReviewsSlider = forwardRef<ReviewsSliderRef, ReviewsSliderProps>(({ review
 
     return (
         <div className="relative">
-            {/* SCROLLER - 3 CARDS VISIBLE ON DESKTOP, 1 ON MOBILE */}
             <div
                 ref={ref}
                 className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pr-0 md:pr-[calc(66.666%+32px)]"
@@ -99,13 +97,9 @@ const ReviewsSlider = forwardRef<ReviewsSliderRef, ReviewsSliderProps>(({ review
                                         {review.name}
                                     </span>
 
+
                                     <div className="flex items-center gap-1 text-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                                        </svg>
-                                        <span className="text-xs opacity-80">Instagram</span>
+                                        <span className="text-xs opacity-80">{review.social_media}</span>
                                     </div>
                                 </div>
                             </div>

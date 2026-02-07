@@ -27,13 +27,9 @@ export default function Pricing() {
 
     return (
         <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-gray-100/50">
-            {/* GLOBAL CONTAINER */}
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                {/* ===================== DESKTOP NÉZET (lg+) ===================== */}
                 <div className="hidden lg:block">
                     <div className="grid grid-cols-4 gap-6 xl:gap-8">
-                        {/* SIDEBAR - Feature nevek + címek */}
                         <div className="flex flex-col">
                             <div className="h-[220px] xl:h-[240px] flex flex-col justify-start pr-6">
                                 <div className="flex items-center gap-2 mb-3">
@@ -45,7 +41,6 @@ export default function Pricing() {
                                     Választható<br />csomagok
                                 </h2>
 
-                                {/* Toggle */}
                                 <div className="bg-white border border-gray-200 rounded-full p-1.5 inline-flex self-start shadow-sm">
                                     <button
                                         onClick={() => setBillingPeriod('1nap')}
@@ -68,7 +63,6 @@ export default function Pricing() {
                                 </div>
                             </div>
 
-                            {/* Feature nevek */}
                             <div>
                                 {features.map((f, i) => (
                                     <div key={i} className="h-[64px] xl:h-[72px] flex items-center border-b border-gray-200 last:border-0">
@@ -87,7 +81,6 @@ export default function Pricing() {
                                 ))}
                             </div>
 
-                            {/* Egyedi ajánlat CTA */}
                             <div className="mt-10 p-5 xl:p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
                                 <div className="flex items-start gap-4">
                                     <div className="bg-primary/10 p-2.5 rounded-full flex-shrink-0">
@@ -105,13 +98,11 @@ export default function Pricing() {
                             </div>
                         </div>
 
-                        {/* PLAN CARDS */}
                         {plans.map((plan) => (
                             <div
                                 key={plan.id}
                                 className={`flex flex-col rounded-[32px] xl:rounded-[40px] shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden ${plan.isElite ? 'bg-primarydark text-white' : 'bg-white'}`}
                             >
-                                {/* Header */}
                                 <div className={`h-[220px] xl:h-[240px] p-6 xl:p-8 text-center flex flex-col justify-center items-center border-b ${plan.isElite ? 'border-white/10' : 'border-gray-100'}`}>
                                     <h3 className="text-2xl xl:text-3xl font-bold font-rem mb-1 flex justify-center items-center">
                                         {plan.isElite && <Gem className="w-10 h-10 text-secondary mr-2" />}
@@ -129,7 +120,6 @@ export default function Pricing() {
                                     {plan.isElite && <div className='w-[110%] mt-6 border-t-2 border-dashed border-secondary'></div>}
                                 </div>
 
-                                {/* Features */}
                                 <div className="px-6 xl:px-8 flex-grow">
                                     {features.map((f, i) => (
                                         <div
@@ -149,7 +139,6 @@ export default function Pricing() {
                                     ))}
                                 </div>
 
-                                {/* CTA Button */}
                                 <div className="p-6 xl:p-8">
                                     <Link
                                         href="/kapcsolat"
@@ -167,9 +156,7 @@ export default function Pricing() {
                     </div>
                 </div>
 
-                {/* ===================== MOBILE + TABLET NÉZET (<lg) ===================== */}
                 <div className="lg:hidden">
-                    {/* Header */}
                     <div className="text-center mb-8">
                         <div className="flex items-center justify-center gap-2 mb-3">
                             <span className="w-2 h-2 rounded-full bg-primarydark/50"></span>
@@ -179,7 +166,6 @@ export default function Pricing() {
                             Választható csomagok
                         </h2>
                         
-                        {/* Toggle */}
                         <div className="bg-white border border-gray-200 rounded-full p-1 sm:p-1.5 inline-flex shadow-sm">
                             <button
                                 onClick={() => setBillingPeriod('1nap')}
@@ -196,14 +182,12 @@ export default function Pricing() {
                         </div>
                     </div>
 
-                    {/* Plan Cards - Accordion Style */}
                     <div className="space-y-4 max-w-2xl mx-auto">
                         {plans.map((plan) => (
                             <div
                                 key={plan.id}
                                 className={`rounded-2xl overflow-hidden shadow-lg transition-all ${plan.isElite ? 'bg-primarydark' : 'bg-white'}`}
                             >
-                                {/* Card Header - Clickable */}
                                 <button
                                     onClick={() => setOpenMobileCard(openMobileCard === plan.id ? '' : plan.id)}
                                     className="w-full p-5 sm:p-6 flex items-center justify-between"
@@ -234,10 +218,8 @@ export default function Pricing() {
                                     </div>
                                 </button>
 
-                                {/* Expandable Content */}
                                 <div className={`overflow-hidden transition-all duration-300 ${openMobileCard === plan.id ? 'max-h-[800px]' : 'max-h-0'}`}>
                                     <div className={`px-5 sm:px-6 pb-5 sm:pb-6 ${plan.isElite ? 'border-t-2 border-dashed border-secondary' : 'border-t border-gray-100'}`}>
-                                        {/* Features */}
                                         <div className="py-3">
                                             {features.map((f, i) => (
                                                 <div key={i} className={`h-[48px] sm:h-[52px] flex items-center justify-between border-b last:border-0 ${plan.isElite ? 'border-white/10' : 'border-gray-200'}`}>
@@ -267,7 +249,6 @@ export default function Pricing() {
                                             ))}
                                         </div>
 
-                                        {/* CTA Button */}
                                         <Link
                                             href="/kapcsolat"
                                             className={`w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-all mt-3 ${plan.isElite
@@ -284,7 +265,6 @@ export default function Pricing() {
                         ))}
                     </div>
 
-                    {/* Custom Quote CTA */}
                     <div className="mt-8 p-5 sm:p-6 bg-white rounded-2xl border border-gray-100 flex items-start gap-4 shadow-sm max-w-2xl mx-auto">
                         <div className="bg-primary/10 p-2.5 rounded-full flex-shrink-0">
                             <HelpCircle className="text-primary w-5 h-5" />

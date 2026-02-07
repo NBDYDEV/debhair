@@ -13,7 +13,6 @@ const HeroIntroduce = async () => {
 
     return (
         <section className="bg-white py-16 md:py-20 lg:py-24 overflow-hidden">
-            {/* GLOBAL CONTAINER */}
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
                     className="
@@ -22,22 +21,17 @@ const HeroIntroduce = async () => {
                         lg:grid lg:grid-cols-2 lg:items-center lg:gap-16
                     "
                 >
-                    {/* VIDEO SECTION */}
                     <div className="w-full relative order-2 lg:order-1">
                         <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden border-4 border-primarydark shadow-2xl aspect-video w-full">
                             <MediaPlayer src={fullVideoUrl} />
                         </div>
                     </div>
-
-                    {/* TEXT SECTION */}
                     <div className="w-full flex flex-col gap-4 lg:gap-6 text-center lg:text-left order-1 lg:order-2">
-                        {/* LABEL */}
                         <div className="flex items-center gap-2 text-gray-500 text-sm font-bold uppercase tracking-wider justify-center lg:justify-start">
                             <span className="w-2 h-2 rounded-full bg-primarydark/50"></span>
                             <span>Bemutatkozás</span>
                         </div>
 
-                        {/* HEADLINE */}
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-rem font-extrabold text-primarydark leading-tight max-w-[36ch] sm:max-w-prose mx-auto lg:mx-0">
                             Prémium hajbeültetés{" "}
                             <span className="relative inline-block">
@@ -49,7 +43,6 @@ const HeroIntroduce = async () => {
                             környezetben
                         </h2>
 
-                        {/* DESCRIPTION */}
                         <div
                             className="
                                 flex flex-col gap-4

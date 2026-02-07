@@ -7,8 +7,6 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-
-    // Close menu on outside click
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
@@ -23,7 +21,6 @@ function Navbar() {
 
         if (isOpen) {
             document.addEventListener('mousedown', handleClickOutside);
-            // Prevent scroll when menu is open
             document.body.style.overflow = 'hidden';
         }
 
@@ -33,7 +30,6 @@ function Navbar() {
         };
     }, [isOpen]);
 
-    // Close menu on escape key
     useEffect(() => {
         const handleEscape = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
@@ -188,7 +184,6 @@ function Navbar() {
                 </div>
             </div>
 
-            {/* Backdrop overlay */}
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-opacity-50 z-30 md:hidden"

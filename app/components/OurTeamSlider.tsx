@@ -69,7 +69,6 @@ export default function OurTeamSlider({ children }: Props) {
 
 
 
-            {/* Custom Controls */}
             <div className="flex items-center justify-between gap-4 mt-8 py-4 px-6 rounded-full max-w-3xl mx-auto">
                 <button
                     onClick={() => scroll('left')}

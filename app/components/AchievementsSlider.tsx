@@ -72,8 +72,6 @@ export default function AchievementsSlider({ children }: Props) {
                     </div>
                 ))}
             </div>
-
-            {/* NYILAK – CSAK DESKTOP */}
             <button
                 onClick={() => scroll('left')}
                 disabled={!canScrollLeft}

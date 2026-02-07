@@ -12,32 +12,21 @@ export default function Error({
     reset: () => void
 }) {
     useEffect(() => {
-        // Log error to error reporting service
         console.error('Application error:', error)
-
-        // Optional: Send to error tracking service (Sentry, etc.)
-        // if (typeof window !== 'undefined' && window.Sentry) {
-        //     window.Sentry.captureException(error)
-        // }
     }, [error])
 
     return (
         <div className="min-h-screen bg-linear-to-b from-background to-primary/5 flex items-center justify-center px-6">
             <div className="max-w-2xl text-center">
-                {/* Error icon */}
                 <div className="mb-8 inline-flex items-center justify-center w-24 h-24 rounded-full bg-red-100">
                     <AlertTriangle className="w-12 h-12 text-red-600" aria-hidden="true" />
                 </div>
-
-                {/* Cím és leírás */}
                 <h1 className="text-3xl md:text-4xl font-bold text-primarydark mb-4">
                     Hoppá, valami hiba történt
                 </h1>
                 <p className="text-lg text-gray-600 mb-2 max-w-md mx-auto">
                     Elnézést kérünk a kellemetlenségért. Váratlan hiba lépett fel az oldal betöltése során.
                 </p>
-
-                {/* Error details (csak development módban) */}
                 {process.env.NODE_ENV === 'development' && (
                     <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg text-left max-w-xl mx-auto overflow-auto">
                         <p className="text-sm font-mono text-red-800 break-all">
@@ -50,8 +39,6 @@ export default function Error({
                         )}
                     </div>
                 )}
-
-                {/* Akciógombok */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
                     <button
                         onClick={reset}
@@ -70,7 +57,6 @@ export default function Error({
                     </Link>
                 </div>
 
-                {/* Kapcsolat info */}
                 <div className="mt-12 pt-8 border-t border-gray-200">
                     <p className="text-sm text-gray-600 mb-3">
                         Ha a probléma továbbra is fennáll, kérjük, vegye fel velünk a kapcsolatot:

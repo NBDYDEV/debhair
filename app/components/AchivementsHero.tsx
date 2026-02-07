@@ -67,7 +67,6 @@ async function AchivementsHero() {
                         </div>
                     </div>
 
-                    {/* RIGHT SIDE - IMAGE CLUSTER (EXACT REFERENCE LAYOUT) */}
                     <div className="relative flex items-center justify-center min-h-[450px] sm:min-h-[550px] lg:min-h-[650px]">
                         <div className="lg:hidden grid grid-cols-2 gap-4 sm:gap-6 w-full max-w-md">
                             <div className="relative aspect-square rounded-full border-4 border-primarydark shadow-xl overflow-hidden bg-gray-100 hover:scale-105 transition-all duration-300">
@@ -112,10 +111,8 @@ async function AchivementsHero() {
                             </div>
                         </div>
 
-                        {/* DESKTOP - REFERENCE IMAGE LAYOUT (EXACTLY LIKE THE SCREENSHOT) */}
                         <div className="hidden lg:block relative w-full h-full">
                             
-                            {/* TOP IMAGE - Small, upper left area */}
                             <div className="absolute top-[10%] left-[10%] w-32 h-32 xl:w-36 xl:h-36 z-10 group">
                                 <div className="relative w-full h-full rounded-full border-4 border-primarydark shadow-xl overflow-hidden bg-gray-100 transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:border-primary hover:z-50">
                                     <Image
@@ -130,7 +127,6 @@ async function AchivementsHero() {
                                 </div>
                             </div>
 
-                            {/* RIGHT IMAGE - LARGEST, center-right (main focus) */}
                             <div className="absolute top-[22%] right-[8%] w-64 h-64 xl:w-72 xl:h-72 z-30 group">
                                 <div className="relative w-full h-full rounded-full border-[6px] border-primarydark shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden bg-gray-100 transition-all duration-500 hover:scale-105 hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] hover:border-primary hover:z-50">
                                     <Image
@@ -145,7 +141,6 @@ async function AchivementsHero() {
                                 </div>
                             </div>
 
-                            {/* LEFT IMAGE - Medium, lower-left area */}
                             <div className="absolute bottom-[20%] left-[8%] w-44 h-44 xl:w-52 xl:h-52 z-20 group">
                                 <div className="relative w-full h-full rounded-full border-[5px] border-primarydark shadow-2xl overflow-hidden bg-gray-100 transition-all duration-500 hover:scale-110 hover:translate-y-1 hover:shadow-3xl hover:border-primary hover:z-50">
                                     <Image
@@ -160,7 +155,6 @@ async function AchivementsHero() {
                                 </div>
                             </div>
 
-                            {/* BOTTOM IMAGE - Small, lower-right area */}
                             <div className="absolute bottom-[8%] right-[22%] w-36 h-36 xl:w-40 xl:h-40 z-15 group">
                                 <div className="relative w-full h-full rounded-full border-4 border-primarydark shadow-xl overflow-hidden bg-gray-100 transition-all duration-500 hover:scale-110 hover:translate-y-2 hover:shadow-2xl hover:border-primary hover:z-50">
                                     <Image
@@ -175,13 +169,11 @@ async function AchivementsHero() {
                                 </div>
                             </div>
 
-                            {/* DECORATIVE FLOATING ELEMENTS */}
                             <div className="absolute top-[18%] left-[28%] w-3 h-3 rounded-full bg-primary/30 blur-md animate-pulse" />
                             <div className="absolute bottom-[45%] right-[15%] w-4 h-4 rounded-full bg-secondary/25 blur-md animate-pulse" style={{ animationDelay: '2s' }} />
                             <div className="absolute top-[52%] left-[20%] w-2 h-2 rounded-full bg-primary/20 blur-sm animate-pulse" style={{ animationDelay: '3.5s' }} />
                             <div className="absolute bottom-[28%] right-[45%] w-3 h-3 rounded-full bg-secondary/30 blur-md animate-pulse" style={{ animationDelay: '1s' }} />
                             
-                            {/* SUBTLE CONNECTING LINES */}
                             <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M 20% 15% Q 50% 30% 75% 35%" stroke="#0F4D43" strokeWidth="2" fill="none" strokeDasharray="8,6" />
                                 <path d="M 18% 70% Q 40% 55% 68% 70%" stroke="#0F4D43" strokeWidth="2" fill="none" strokeDasharray="8,6" />

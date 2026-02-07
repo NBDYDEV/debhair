@@ -22,7 +22,6 @@ async function Hero() {
 
     return (
         <section className="relative w-full bg-gradient-to-t from-primary/30 to-white overflow-hidden">
-            {/* GLOBAL CONTAINER */}
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
                     className="
@@ -34,9 +33,7 @@ async function Hero() {
                         lg:grid lg:grid-cols-2 lg:items-center lg:gap-12
                     "
                 >
-                    {/* CONTENT SECTION */}
                     <div className="flex flex-col gap-6 lg:gap-8 text-center lg:text-left">
-                        {/* HEADLINE - Mobile-first typography */}
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-primarydark leading-tight tracking-tight">
                             <span className="font-rem font-extrabold">
                                 Hajbeültetés
@@ -56,14 +53,11 @@ async function Hero() {
                             </span>
                         </h1>
 
-                        {/* SUBHEADLINE - Optimized max-width */}
                         <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-rem max-w-[36ch] sm:max-w-prose mx-auto lg:mx-0">
                             {description}
                         </p>
 
-                        {/* CTA SECTION - Stacked mobile, inline desktop */}
                         <div className="flex flex-col gap-4 mt-2 lg:flex-row lg:gap-4">
-                            {/* PRIMARY CTA */}
                             <Link
                                 href="/kapcsolat"
                                 className="
@@ -85,8 +79,6 @@ async function Hero() {
                                 <Calendar className="h-5 w-5" />
                                 <span>Időpont foglalás</span>
                             </Link>
-
-                            {/* SECONDARY CTA */}
                             <Link
                                 href="/hogy-mukodik"
                                 className="
@@ -112,10 +104,8 @@ async function Hero() {
                         </div>
                     </div>
 
-                    {/* IMAGE SECTION */}
                     <div className="relative flex justify-center items-center mt-8 lg:mt-0">
                         <div className="relative w-full max-w-md lg:max-w-none">
-                            {/* IMAGE WRAPPER - Fixed aspect ratio */}
                             <div className="relative rotate-2 lg:rotate-3 transition-transform duration-500 hover:rotate-0">
                                 <div className="rounded-2xl border-4 border-primarydark shadow-2xl overflow-hidden bg-primarydark">
                                     <div className="relative aspect-[4/3] w-full">
@@ -133,7 +123,6 @@ async function Hero() {
                                 </div>
                             </div>
 
-                            {/* TRUST BADGES - Desktop only */}
                             <div className="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-xl hidden lg:flex items-center gap-3 max-w-[220px] -rotate-3 z-10">
                                 <div className="bg-secondary/20 p-2 rounded-full text-secondary flex-shrink-0">
                                     <Trophy className="h-6 w-6" />

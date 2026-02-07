@@ -30,7 +30,7 @@ function Hero() {
                     </h1>
 
                     <p className="text-lg font-sans text-primarydark">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                        Tekintse meg pácienseink valós eredményeit és a kezeléseink során elért természetes hatásokat. Minden kép a gondos tervezés és szakértelem eredménye.
                     </p>
 
                     <Link

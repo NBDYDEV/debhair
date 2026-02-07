@@ -52,15 +52,9 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
     const [step, setStep] = useState(1)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState<Record<string, string>>({})
-
-    // STEP 1
     const [hairloss, setHairloss] = useState("")
-
-    // STEP 2
     const [age, setAge] = useState("")
     const [hairlossSince, setHairlossSince] = useState("")
-
-    // STEP 3
     const [fullName, setFullName] = useState("")
     const [country, setCountry] = useState<CountryCode>("HU")
     const [phone, setPhone] = useState("")
@@ -72,7 +66,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
         DE: { prefix: "+49", flag: "🇩🇪", placeholder: "151 23456789", max: 11, pattern: /^\d{10,11}$/ },
     }
 
-    // Validációs függvények
     const validateStep1 = (): boolean => {
         const newErrors: Record<string, string> = {}
         if (!hairloss) {
@@ -183,12 +176,9 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
         <section className={`w-full py-12 sm:py-16 lg:py-24 overflow-hidden ${backgroundMap[backgroundVariant]}`} aria-labelledby="contact-form-title">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-
-                    {/* FORM SECTION */}
                     <div
                         className={`w-full lg:w-1/2 rounded-2xl lg:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 xl:p-10 flex flex-col bg-white min-h-[600px] lg:min-h-[650px]`}
                     >
-                        {/* HEADER */}
                         <div className="text-center mb-6 lg:mb-8">
                             <h2 id="contact-form-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primarydark">
                                 <span className="text-secondary">Ingyenes</span> árajánlat kérése
@@ -197,8 +187,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                 Mindössze 3 egyszerű lépésben
                             </p>
                         </div>
-
-                        {/* STEP INDICATOR - MOBILE OPTIMIZED */}
                         <div className="flex justify-center items-center mb-6 lg:mb-8 px-2">
                             {steps.map((s, i) => (
                                 <React.Fragment key={s.id}>
@@ -223,7 +211,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                             ))}
                         </div>
 
-                        {/* STEP CONTENT */}
                         <div className="flex-1">
                             <h3 className="text-lg sm:text-xl font-bold text-primarydark text-center mb-4 sm:mb-6 px-2">
                                 {steps[step - 1].description}
@@ -237,7 +224,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    {/* STEP 1 */}
                                     {step === 1 && (
                                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                                             {hairlossOptions.map((option) => (
@@ -273,7 +259,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                         </div>
                                     )}
 
-                                    {/* STEP 2 */}
                                     {step === 2 && (
                                         <div className="space-y-5 max-w-sm mx-auto">
                                             <div>
@@ -334,7 +319,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                         </div>
                                     )}
 
-                                    {/* STEP 3 */}
                                     {step === 3 && (
                                         <div className="space-y-4 max-w-sm mx-auto">
                                             <div>
@@ -454,7 +438,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                             </AnimatePresence>
                         </div>
 
-                        {/* BUTTONS */}
                         <div className={`mt-6 lg:mt-8 pt-6 border-t border-gray-200 flex ${step > 1 ? "justify-between" : "justify-center"} items-center gap-3 sm:gap-4`}>
                             {step > 1 && (
                                 <button
@@ -487,7 +470,6 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                         </div>
                     </div>
 
-                    {/* MAP SECTION */}
                     <div className="w-full lg:w-1/2">
                         <div
                             className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[500px]"

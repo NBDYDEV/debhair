@@ -3,19 +3,19 @@ import PrepCardClient from './PrepCardClient'
 
 const afterCareItems = [
     {
-        title: 'LOREM IPSUM',
+        title: 'Orvosi felmérés és konzultáció',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis blandit ornare. Aliquam id convallis metus. Mauris ex ligula, porta vel aliquet vel, aliquet non odio. Proin tortor lorem, semper eu velit eu, lacinia dictum justo. Morbi quis magna quis dui aliquet viverra. Maecenas ut facilisis magna. ',
+            'A hajbeültetés előtt elengedhetetlen egy alapos orvosi vizsgálat és személyes konzultáció. Ennek során felmérjük a hajhullás okát, az adóterület állapotát, valamint az Ön általános egészségi állapotát. Ez biztosítja, hogy a beavatkozás biztonságosan, az Ön igényeire szabva történjen.',
     },
     {
-        title: 'LOREM IPSUM',
+        title: 'Gyógyszerek és életmód',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis blandit ornare. Aliquam id convallis metus. Mauris ex ligula, porta vel aliquet vel, aliquet non odio. Proin tortor lorem, semper eu velit eu, lacinia dictum justo. Morbi quis magna quis dui aliquet viverra. Maecenas ut facilisis magna. ',
+            'A beavatkozás előtti napokban bizonyos gyógyszerek, vitaminok és élvezeti szerek kerülése javasolt. A vérhígítók, az alkohol és a dohányzás befolyásolhatják a gyógyulást, ezért részletes útmutatót adunk arról, mire kell figyelni a tökéletes eredmény érdekében.',
     },
     {
-        title: 'LOREM IPSUM',
+        title: 'Felkészülés a beavatkozás napjára',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis blandit ornare. Aliquam id convallis metus. Mauris ex ligula, porta vel aliquet vel, aliquet non odio. Proin tortor lorem, semper eu velit eu, lacinia dictum justo. Morbi quis magna quis dui aliquet viverra. Maecenas ut facilisis magna. ',
+            'A hajbeültetés napján fontos a megfelelő előkészület: tiszta haj, kényelmes ruházat és nyugodt érkezés. Klinikánk minden szükséges információt előre megoszt, hogy Ön felkészülten, stresszmentesen vágjon bele a kezelésbe.',
     },
 ]
 

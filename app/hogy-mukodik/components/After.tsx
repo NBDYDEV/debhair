@@ -5,19 +5,19 @@ import AfterCardsClient from './AfterCardsClient'
 
 const afterCareItems = [
     {
-        title: 'LOREM IPSUM',
+        title: 'Pihenés és regeneráció',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis blandit ornare. Aliquam id convallis metus. Mauris ex ligula, porta vel aliquet vel, aliquet non odio. Proin tortor lorem, semper eu velit eu, lacinia dictum justo. Morbi quis magna quis dui aliquet viverra. Maecenas ut facilisis magna. ',
+            'A hajbeültetést követő napokban a szervezet regenerációja kiemelten fontos. Javasolt a fokozott fizikai terhelés kerülése, valamint a megfelelő mennyiségű pihenés biztosítása. Ez elősegíti a beültetett hajszálak megtapadását és a gyorsabb gyógyulást.',
     },
     {
-        title: 'LOREM IPSUM',
+        title: 'Hajápolás és tisztítás',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis blandit ornare. Aliquam id convallis metus. Mauris ex ligula, porta vel aliquet vel, aliquet non odio. Proin tortor lorem, semper eu velit eu, lacinia dictum justo. Morbi quis magna quis dui aliquet viverra. Maecenas ut facilisis magna. ',
+            'A beavatkozás után speciális hajápolási szabályokat kell betartani. A hajmosás kizárólag az előírt módon, az ajánlott termékekkel történhet, kerülve a dörzsölést és az erős vízsugarat. A megfelelő ápolás alapvető a természetes és tartós eredményhez.',
     },
     {
-        title: 'LOREM IPSUM',
+        title: 'Kontroll és utókezelés',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis blandit ornare. Aliquam id convallis metus. Mauris ex ligula, porta vel aliquet vel, aliquet non odio. Proin tortor lorem, semper eu velit eu, lacinia dictum justo. Morbi quis magna quis dui aliquet viverra. Maecenas ut facilisis magna. ',
+            'A rendszeres kontrollvizsgálatok segítenek nyomon követni a gyógyulás folyamatát és a haj növekedését. Klinikánk szakemberei végigkísérik Önt az utókezelési időszakban, és minden felmerülő kérdésre gyors, szakszerű választ adnak.',
     },
 ]
 
