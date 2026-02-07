@@ -16,9 +16,9 @@ export default {
 			background: '#F6F6F6'
   		},
 		fontFamily:{
-			'abril': "AbrilFatface-Regular",
 			'rem': "REM-VariableFont_wght",
-			'lora': 'Lora-VariableFont_wght'
+			'lora': 'Lora-VariableFont_wght',
+			'instrument': 'InstrumentSerif-Italic'
 		},
   		borderRadius: {
   			lg: 'var(--radius)',

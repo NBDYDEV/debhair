@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@font-face {
-    font-family: "AbrilFatface-Regular";
-    src: url("/AbrilFatface-Regular.ttf");
-}
-
 @font-face {
     font-family: "REM-VariableFont_wght";
     src: url("/REM-VariableFont_wght.ttf");
@@ -16,6 +10,11 @@
 @font-face {
     font-family: "Lora-VariableFont_wght";
     src: url("/Lora-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "InstrumentSerif-Italic";
+    src: url("/InstrumentSerif-Italic.ttf");
 }
 
 :root{

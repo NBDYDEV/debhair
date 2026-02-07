@@ -147,7 +147,7 @@ async function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Weboldalt készítette: <span className='font-abril'>Netbázis</span>
+                        Weboldalt készítette: <span className='font-instrument text-base'>Netbázis</span>
                     </Link>
                     <div className="flex gap-6">
                         {footerData && footerData[0]?.gdpr && (
