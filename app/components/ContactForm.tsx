@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Check, CircleChevronRight, AlertCircle, Loader2 } from "lucide-react"
 import Image from "next/image"
+import { toast } from "sonner"
 
 type BackgroundVariant = "light" | "dark" | "gradient"
 
@@ -140,6 +141,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                 }
 
                 await new Promise(resolve => setTimeout(resolve, 2000))
+                toast.success("Siker! Kollégáink hamarosan felveszik önnel a kapcsolatot.")
 
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                     (window as any).gtag('event', 'form_submit', {
@@ -487,12 +489,8 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
 
                     {/* MAP SECTION */}
                     <div className="w-full lg:w-1/2">
-                        <motion.div
-                            className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-primarydark aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[500px]"
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
+                        <div
+                            className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[500px]"
                         >
                             <iframe
                                 className="w-full h-full block"
@@ -501,7 +499,7 @@ export default function ContactForm({ backgroundVariant = "light" }: ContactForm
                                 title="Deb Hair klinika térkép"
                                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDt5f--St5Z0UpDT4iFJ0hrg0QeQc0IB4&q=Deb+Hair+hajbeültetési+klinika+Debrecen"
                             />
-                        </motion.div>
+                        </div>
                     </div>
 
                 </div>
